@@ -1,0 +1,27 @@
+@if (label) {
+    <label
+      [for]="inputId"
+      [ngStyle]="isInvalid ? {
+        'color': '#dd0031'
+      } : {}"
+      >{{ label }}</label
+    >
+  }
+  <div class="input">
+    <span
+      class="inputContainer"
+      coreFormInputError
+      [inputControl]="formControl">
+      <input
+        [ngClass]="errorClass"
+        [id]="inputId"
+        [type]="inputType"
+        [placeholder]="placeholder"
+        [value]="value"
+        [disabled]="disabled"
+        (input)="onChangeHandler($event)"
+        (blur)="onBlurHandler()"
+        #inputRef />
+    </span>
+  </div>
+  

@@ -1,0 +1,40 @@
+<div class="containerTable">
+    @if (products$ | async; as products) {
+      <div [ngStyle]="{'overflow-x': 'auto'}">
+        @if (load$ | async) {
+          <app-progress-bar />
+        }
+        <table>
+          <thead>
+            <tr>
+              <th [ngStyle]="{width: '100px', textAlign: 'center'}">Logo</th>
+              <th>Nombre del producto</th>
+              <th>Descripción</th>
+              <th>Fecha de liberación</th>
+              <th>Fecha de reestructuración</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (product of (filteredProducts$ | async); track product.id) {
+              <tr>
+                <td [ngStyle]="{textAlign: 'center'}"><img [ngSrc]="product.logo" width="50" height="50"></td>
+                <td>{{product.name}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.releaseDate | date: 'dd-MM-yyyy':'GMT'}}</td>
+                <td>{{product.revisionDate | date: 'dd-MM-yyyy':'GMT'}}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+      @if (filteredProducts$ | async; as results) {
+        @if (!results?.length) {
+          <div class="emptyTable"><span>No existen productos</span></div>
+        }
+        <div class="footTable">
+          {{results?.length}} results{{results?.length === 1 ? '' : 's'}}
+        </div>
+      }
+    }
+  </div>
+  

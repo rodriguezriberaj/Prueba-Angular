@@ -1,0 +1,11 @@
+:host {
+    display: block;
+  }
+  .ceateButtons {
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2rem 0;
+  }
+  

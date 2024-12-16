@@ -1,0 +1,35 @@
+.toastItem {
+    position: relative;
+    width: 20rem;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(97,97,97,0.4);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(97,97,97,0.4);
+    box-shadow: 5px 5px 5px 0px rgba(97,97,97,0.4);
+  }
+  .toastItem.success {
+    background-color: var(--green-background);
+    color: var(--success);
+  }
+  .toastItem.error {
+    background-color: var(--red-background);
+    color: var(--error);
+  }
+  .toastItem-cerrar {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.3rem;
+    background-color: transparent;
+  }
+  .toastItem.success .toastItem-close{
+    color: var(--success);
+  }
+  .toastItem.error .toastItem-close{
+    color: var(--error);
+  }
+  

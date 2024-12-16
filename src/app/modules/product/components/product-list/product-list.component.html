@@ -1,0 +1,7 @@
+<div class="actions">
+    <div class="searcher">
+      <app-input-text inputId="searchId" placeholder="Buscar..." [formControl]="search" />
+    </div>
+    <app-button label="Agregar" (btnClick)="onCreateClick()" />
+</div>
+<app-product-table [search]="search.value ?? ''" />

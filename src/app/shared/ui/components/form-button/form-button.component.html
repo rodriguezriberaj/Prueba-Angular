@@ -1,0 +1,5 @@
+<div class="createButtons">
+    <app-button label="Reiniciar" tipo="button" variante="secondary" (btnClick)="resetForm()"/>
+    <app-button [label]="'Enviar'" [disabled]="(load$ | async) ?? false" (btnClick)="save()"/>
+  </div>
+  
